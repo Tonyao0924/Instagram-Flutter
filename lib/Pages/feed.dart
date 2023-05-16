@@ -80,8 +80,7 @@ class FeedState extends StatelessWidget {
                         ),
                         Spacer(),
                         IconButton(
-                          onPressed: () {
-                          },
+                          onPressed: () {},
                           icon: Icon(
                             Icons.more_vert,
                             color: Colors.grey,
@@ -125,6 +124,79 @@ class FeedState extends StatelessWidget {
                         )
                       ],
                     ),
+                    Row(
+                      children: <Widget>[
+                        SizedBox(width: 10),
+                        Text(
+                          '9,561個讚',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text: 'good_memerep',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              TextSpan(
+                                  text: ' 讓他安穩的睡一覺，然後就過頭了好幾站。',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                  ))
+                            ]),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        SizedBox(width: 10,),
+                        Text(
+                          '查看全部94則留言',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black45,
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        SizedBox(width: 10,),
+                        Text(
+                          '1 天  ',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black45,
+                          ),
+                        ),
+                        Text(
+                          '翻譯年糕',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
