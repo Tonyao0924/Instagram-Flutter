@@ -1,6 +1,7 @@
+import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 
-import 'commonComponents/navigationBar.dart';
+import '../commonComponents/navigationBar.dart';
 import 'feed.dart';
 
 class Home extends StatelessWidget {
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
               iconSize: 32,
               onPressed: () {},
               icon: Icon(
-                Icons.favorite_border,
+                FeatherIcons.heart,
                 color: Colors.black,
               ),
             ),
@@ -31,7 +32,7 @@ class Home extends StatelessWidget {
               iconSize: 32,
               onPressed: () {},
               icon: Icon(
-                Icons.messenger_outline_sharp,
+                FeatherIcons.messageCircle,
                 color: Colors.black,
               ),
             ),

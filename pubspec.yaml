@@ -31,8 +31,9 @@ dependencies:
   flutter:
     sdk: flutter
   feather_icons_flutter: ^4.7.4
-  material_design_icons_flutter: 4.0.5345
   flutter_vector_icons: ^1.0.0
+  feather_icons: ^1.2.0
+  material_design_icons_flutter: ^6.0.7096
 
 
   # The following adds the Cupertino Icons font to your application.

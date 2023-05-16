@@ -1,3 +1,4 @@
+import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 
 class FeedState extends StatelessWidget {
@@ -5,33 +6,126 @@ class FeedState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        SizedBox(height: 20),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
             children: <Widget>[
-              ...List.generate(
-                LimitTimeArray.length,
-                (index) => Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Column(
-                    children: [
-                      SizedBox(width: 20),
-                      CircleAvatar(
-                        radius: 32,
-                        backgroundImage: AssetImage(LimitTimeArray[index].src),
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height: 10),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: <Widget>[
+                          ...List.generate(
+                            LimitTimeArray.length,
+                            (index) => Padding(
+                              padding: const EdgeInsets.only(left: 18),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 32,
+                                    backgroundImage:
+                                        AssetImage(LimitTimeArray[index].src),
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    LimitTimeArray[index].name,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        LimitTimeArray[index].name,
-                        style: TextStyle(
-                          fontSize: 16,
+                    ),
+                    Divider(
+                      color: Colors.black12,
+                      thickness: 1,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.all(8),
+                          child: Row(
+                            children: <Widget>[
+                              Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.black12, width: 2),
+                                ),
+                                child: CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage('assets/limitTime/good.jpg'),
+                                  radius: 21,
+                                ),
+                              ),
+                              SizedBox(width: 8),
+                              Text(
+                                'good_memerep',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        Spacer(),
+                        IconButton(
+                          onPressed: () {
+                          },
+                          icon: Icon(
+                            Icons.more_vert,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                      ],
+                    ),
+                    Image.asset('assets/post/good.jpg'),
+                    Row(
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(
+                            FeatherIcons.heart,
+                            size: 30,
+                          ),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            FeatherIcons.messageCircle,
+                            size: 30,
+                          ),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            FeatherIcons.send,
+                            size: 30,
+                          ),
+                          onPressed: () {},
+                        ),
+                        Spacer(),
+                        IconButton(
+                          icon: Icon(
+                            FeatherIcons.bookmark,
+                          ),
+                          onPressed: () {},
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],
