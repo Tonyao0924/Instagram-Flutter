@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'commonComponents/navigationBar.dart';
+import 'feed.dart';
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -35,50 +38,12 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 10,
-            ),
-
-          ],
-        ),
-      ),
-      bottomNavigationBar: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              height: 1,
-              color: Colors.grey,
-            ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ...List.generate(
-                    bottomNavs.length,
-                    (index) => GestureDetector(
-                      child: Column(
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 30,
-                            onPressed: () {  },
-                            icon: Icon(
-                              bottomNavs[index],
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      body: FeedState(),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FooterNavigation(),
+        ],
       ),
     );
   }
@@ -91,3 +56,4 @@ List<IconData> bottomNavs = [
   Icons.ondemand_video,
   Icons.person_outline,
 ];
+
